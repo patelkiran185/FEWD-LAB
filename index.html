@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+    }
+    .container {
+      padding: 10px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+    }
+    header img{
+      height: 30%;
+      width: 30%;
+    }
+    hr {
+      margin: 10px 0;
+    }
+    h1, h2, h3 {
+      margin: 5px;
+      text-align: center;
+    }
+    p, li, a, label {
+      font-size: 16px;
+      margin: 20px;
+    }
+    p {
+      line-height: 1.5rem;
+    }
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .navbar a {
+      background-color: rgb(241, 207, 163);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin: 3px;
+      color: black;
+      font-weight: 500;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .navbar a:hover {
+      background-color: rgb(230, 192, 142);
+      transform: translateY(-5px) scale(1.05);
+    }
+    /* Section Styles */
+    section {
+      padding: 20px 0;
+    }
+    /* Self Introduction */
+    #intro .intro-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    #intro .intro-content p {
+      max-width: 800px;
+    }
+    #intro .intro-content img {
+      width: 190px;
+      height: 190px;
+      object-fit: contain;
+      margin-right: 80px;
+      margin-bottom: 15px;
+    }
+    /* Skills Section */
+    #skills .skills-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    #skills .skillH {
+    background-color: white;
+    padding: 5px 10px;
+    width: 90%;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0 auto; 
+}
+
+    #skills h2 {
+      margin-bottom: 20px;
+      border-color: #ccc;
+    }
+    #skills .skill-box {
+      background-color: rgb(241, 207, 163);
+      padding: 10px;
+      border-radius: 4px;
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      box-sizing: border-box;
+    }
+    #skills ul {
+      list-style-type: none;
+      margin-left: 20px;
+      padding: 0;
+    }
+    /* Projects Section */
+    #projects ul {
+      list-style: none;
+      padding: 0;
+    }
+    #projects li {
+      margin: 10px 0;
+    }
+    .project-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .project-title a {
+      text-decoration: none;
+      color: #000;
+      transition: color 0.3s ease;
+    }
+    .project-title a:hover {
+      color: rgb(230, 192, 142);
+      text-decoration: underline;
+    }
+    #projects a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    #projects a:hover {
+      text-decoration: underline;
+    }
+    /* Achievements Section */
+    #achievements ul {
+      margin-left: 20px;
+      padding: 0;
+    }
+    /* Form Container for Feedback and Contact Forms */
+    .form-container {
+      background-color: rgb(250, 235, 215);
+      padding: 20px;
+      border-radius: 4px;
+      max-width: 600px;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .form-container input,
+    .form-container textarea {
+      width: 90%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .form-container button {
+      padding: 10px;
+      background-color: rgb(120, 191, 245);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .form-container button:hover {
+      background-color: rgb(230, 192, 142);
+      transform: translateY(-5px) scale(1.05);
+    }
+    /* Education Section as Table */
+    #education table {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      border-collapse: collapse;
+    }
+    #education th, #education td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    #education th {
+      background-color: rgb(241, 207, 163);
+    }
+    #education td {
+      background-color: rgb(255, 250, 240);
+    }
+    /* Contact Section */
+    #contact .form-container {
+      margin-bottom: 20px;
+    }
+    #contact p {
+      text-align: center;
+      margin: 5px 0;
+    }
+    #contact a {
+      text-decoration: none;
+      color: rgb(241, 207, 163);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    #contact a:hover {
+      color: rgb(230, 192, 142);
+      transform: translateY(-3px);
+    }
+    form label{
+        font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="name">Abcd</h1>
+      <img src="about.jpeg" alt="SankeerthiK">
+      <hr>
+    </header>
+
+    <nav class="navbar">
+      <a href="#intro">Self Introduction</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact Me</a>
+    </nav>
+
+    <hr>
+
+    <!-- Self Introduction -->
+    <section id="intro">
+      <h2>Self Introduction</h2>
+      <div class="intro-content">
+        <p>
+          Hello, this is K Sankeerthi, a CS 3rd year undergraduate at Keshav Memorial Institute of Technology.
+          A motivated student with a strong passion for Cloud Computing, DevOps, and Machine Learning.
+          Eager to apply technical expertise to develop innovative solutions, optimize workflows, and contribute
+          to organizational success. Committed to continuous learning and growth, and driven to excel in dynamic, fast-paced environments.
+        </p>
+        <img src="https://www.svgrepo.com/show/311063/person.svg" alt="SankeerthiK">
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-box">
+            <div class="skillH"><h3>Programming Languages</h3></div>
+          
+          <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>C++</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <div class="skillH"><h3>Web Development</h3></div>
+          <ul>
+            <li>HTML</li>
+            <li>CSS and Bootstrap</li>
+            <li>MERN Stack</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <div class="skillH"><h3>Soft Skills</h3></div>
+          <ul>
+            <li>Leadership skills</li>
+            <li>Communication skills</li>
+            <li>Organization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <div class="project-title">
+            <a href="https://github.com/kasi0403/ReviewBot" target="_blank">Review Bot</a>
+          </div>
+          <p>
+            Developed a RAG chatbot, trained on data scrapped from Flipkart using Playwright, empowering users to make informed purchasing decisions by querying product-related insights.
+          </p>
+        </li>
+        <li>
+          <div class="project-title">
+            <a href="https://github.com/kasi0403/Saanjh-Sahayak" target="_blank">Saanjh Sahayak</a>
+          </div>
+          <p>
+            Built a clinical decision support system for early disease detection and efficient health record management.
+          </p>
+        </li>
+        <li>
+          <div class="project-title">
+            <a href="https://github.com/sreedharjinka/BlockChainG62" target="_blank">Real Estate Application using Blockchain</a>
+          </div>
+          <p>
+            Developed a website utilizing blockchain technology for secure property transactions using cryptocurrency.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Achievements and Feedback -->
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Won the 1st prize in UI/UX designing competition held by TMZ Group.</li>
+        <li>Promoted to the 2nd level of Coding Challenge held at KMIT among the 50 teams registered.</li>
+      </ul>
+      <h2>Feedback Form</h2>
+      <div class="form-container">
+        <form>
+          <label for="feedback-email">Email</label>
+          <input type="email" id="feedback-email" placeholder="Enter email" required>
+          <label for="feedback-text">Feedback</label>
+          <textarea id="feedback-text" placeholder="Enter feedback" rows="4" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Education Section as Table -->
+    <section id="education">
+      <h2>Education</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Institution</th>
+            <th>Program</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Keshav Memorial Institute of Technology</td>
+            <td>B-Tech in Computer Science</td>
+            <td>CGPA: 9.16</td>
+          </tr>
+          <tr>
+            <td>Urbane Junior College</td>
+            <td>Intermediate</td>
+            <td>Percentage: 98%</td>
+          </tr>
+          <tr>
+            <td>Pallavi Model School</td>
+            <td>Matriculation</td>
+            <td>GPA: 10</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+      <h2>Contact Me</h2>
+      <div class="form-container">
+        <form>
+          <label for="contact-email">Enter Email</label>
+          <input type="email" id="contact-email" placeholder="Enter your email" required>
+          <label for="contact-phone">Phone No</label>
+          <input type="number" id="contact-phone" placeholder="Enter your phone number" required>
+          <label for="contact-query">Query</label>
+          <textarea id="contact-query" placeholder="Enter your query" rows="4"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <h3>Social Media</h3>
+      <p>
+        LinkedIn: <a href="https://www.linkedin.com/in/sankeerthi-kasibhatla-56245b270/" target="_blank">Sankeerthi Kasibhatla</a>
+      </p>
+      <p>Phone No: 9083xxxxxx</p>
+      <p>Email ID: xyz@gmail.com</p>
+    </footer>
+  </div>
+</body>
+</html>
