@@ -112,7 +112,7 @@ const Dashboard = ({ username, onLogout }) => {
         {/* About Us Section */}
         <div id="about" style={{ marginTop: "60px" }}>
           <h3>About Us</h3>
-          <p>Welcome to ShopEase! We offer the best products at unbeatable prices. Quality and customer satisfaction are our top priorities!</p>
+          <p>Welcome to Buyze! We offer the best products at unbeatable prices. Quality and customer satisfaction are our top priorities!</p>
         </div>
 
         {/* Contact Us Form */}
